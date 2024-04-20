@@ -24,17 +24,25 @@ namespace CowsAndBulls
                 while (viewMenu == true)
                 {
                     Console.WriteLine("1- Would you like to play a standard game?");
-                    Console.WriteLine("2- Would you like to change the number of digita?");
+                    Console.WriteLine("2- Would you like to change the number of digits?");
                     Console.WriteLine("3- Would you like to see your top score?");
                     Console.WriteLine("4- Would you like to quit?");
                     Console.WriteLine("Choose one of these options");
                     viewMenu = false;
                 }
-                choice = Convert.ToInt32(Console.ReadLine());
-
+                try
+                {
+                    choice = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                    continue;
+                }
                 while (choice > 4)
                 {
                     Console.WriteLine("Enter a valid choice");
+                    choice = Convert.ToInt32(Console.ReadLine());
                 }
                 if (choice == 1)
                 {
@@ -108,8 +116,16 @@ namespace CowsAndBulls
                             Cows = 0;
                             Bulls = 0;
                             Console.WriteLine("Enter a guess:");
-                            int Guess = Convert.ToInt32(Console.ReadLine());
-                            GuessSTR = Convert.ToString(Guess);
+                            GuessSTR = Console.ReadLine();
+                            try
+                            {
+                                int Guess= Convert.ToInt32(GuessSTR);
+                            }
+                            catch (FormatException)
+                            {
+                                Console.WriteLine("Invalid input. Please enter a number.");
+                                continue;
+                            }
                             validGuess = true;
                             if (GuessSTR.Length != Digits || GuessSTR[0] == '0')
                             {
@@ -127,7 +143,6 @@ namespace CowsAndBulls
                                         break;
                                     }
                                 }
-                                if (!validGuess) break;
                             }
                             if (!validGuess)
                             {
@@ -150,6 +165,7 @@ namespace CowsAndBulls
                             }
                             if (Bulls == Digits)
                             {
+                                NumGuesses = NumGuesses + 1;
                                 Console.WriteLine("You win, It took " + NumGuesses + " guesses.");
                             }
                             else
@@ -175,6 +191,8 @@ namespace CowsAndBulls
                             }
                             else
                             {
+                                Console.WriteLine("Bye");
+                                Environment.Exit(0);
                                 break;
                             }
                         }
