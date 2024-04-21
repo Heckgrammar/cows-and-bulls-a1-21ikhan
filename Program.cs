@@ -23,6 +23,7 @@ namespace CowsAndBulls
             {
                 while (viewMenu == true)
                 {
+                    Console.WriteLine("\r\n ____  ____  _      ____      _        ____  _     _     _     ____ \r\n/   _\\/  _ \\/ \\  /|/ ___\\    /.\\      /  __\\/ \\ /\\/ \\   / \\   / ___\\\r\n|  /  | / \\|| |  |||    \\    \\ _\\_    | | //| | ||| |   | |   |    \\\r\n|  \\__| \\_/|| |/\\||\\___ |    /|/ /    | |_\\\\| \\_/|| |_/\\| |_/\\\\___ |\r\n\\____/\\____/\\_/  \\|\\____/    \\__/\\    \\____/\\____/\\____/\\____/\\____/\r\n                                                                    \r\n");
                     Console.WriteLine("1- Would you like to play a standard game?");
                     Console.WriteLine("2- Would you like to change the number of digits?");
                     Console.WriteLine("3- Would you like to see your top score?");
