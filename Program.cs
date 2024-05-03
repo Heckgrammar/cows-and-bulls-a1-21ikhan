@@ -229,7 +229,7 @@ namespace CowsAndBulls
                         }
                         Console.WriteLine("Would you like to play again? Yes or No");
                         string PlayAgain = Console.ReadLine();
-                        while ((PlayAgain != "yes" && (PlayAgain != "yeah") && (PlayAgain != "Yeah") && (PlayAgain != "N") && (PlayAgain != "n") && (PlayAgain != "Y") && (PlayAgain != "y")) && (PlayAgain != "No") && (PlayAgain != "NO") && (PlayAgain != "YES") && (PlayAgain != "no") && (PlayAgain != "n") && (PlayAgain != "N"))
+                        while ((PlayAgain != "yes" && (PlayAgain!="Yes") && (PlayAgain != "yeah") && (PlayAgain != "Yeah") && (PlayAgain != "N") && (PlayAgain != "n") && (PlayAgain != "Y") && (PlayAgain != "y")) && (PlayAgain != "No") && (PlayAgain != "NO") && (PlayAgain != "YES") && (PlayAgain != "no") && (PlayAgain != "n") && (PlayAgain != "N"))
                         {
                             Console.WriteLine("It has to be exactly Yes or No with/without capitals.");
                             PlayAgain = Console.ReadLine();
@@ -238,13 +238,13 @@ namespace CowsAndBulls
                         {
                             Console.WriteLine("Would you like to return to menu");
                             string menuReturn = Console.ReadLine();
-                            while ((menuReturn != "yes" && (menuReturn != "yeah") && (menuReturn != "Yeah") && (menuReturn != "N") && (menuReturn != "n") && (menuReturn != "Y") && (menuReturn != "y")) && (menuReturn != "No") && (menuReturn != "NO") && (menuReturn != "YES") && (menuReturn != "no") && (menuReturn !="n") && (menuReturn!="N"))
+                            while ((menuReturn != "yes" && (menuReturn!= "Yes") && (menuReturn != "yeah") && (menuReturn != "Yeah") && (menuReturn != "N") && (menuReturn != "n") && (menuReturn != "Y") && (menuReturn != "y")) && (menuReturn != "No") && (menuReturn != "NO") && (menuReturn != "YES") && (menuReturn != "no") && (menuReturn !="n") && (menuReturn!="N"))
                             {
                                 Console.WriteLine("It has to be exactly Yes or No with/without capitals");
                                 menuReturn = Console.ReadLine();
                                 continue;
                             }
-                            if ((menuReturn== "Yes") || (menuReturn == "YES") || (menuReturn == "yes") || (menuReturn == "Yeah") || (menuReturn == "yeah") || (menuReturn == "Y" || (menuReturn == "y")))                       
+                            if ((menuReturn== "Yes") || (menuReturn == "YES") || (menuReturn=="Yes") || (menuReturn == "yes") || (menuReturn == "Yeah") || (menuReturn == "yeah") || (menuReturn == "Y" || (menuReturn == "y")))                       
                             {
                                 viewMenu = true;
                                 break;
